@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1065394361616",
+    "project_id": "horoskopos-337f8",
+    "storage_bucket": "horoskopos-337f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065394361616:android:727f4e48b070aba8984195",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.id18044455.horoskopos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065394361616-d2vefrb11cm9ff54ppt9f7jpp0dhm72r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBajtIsA7sMJhyXNIj6ZXnWZRIl9f-UJWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065394361616-d2vefrb11cm9ff54ppt9f7jpp0dhm72r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".SettingsFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/General"
+                android:textColor="#303841"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvChangePW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:drawableRight="@drawable/ic_baseline_navigate_next_24"
+                android:text="@string/ChangePW"
+                android:textColor="#303841"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvChangeEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:drawableRight="@drawable/ic_baseline_navigate_next_24"
+                android:text="@string/ChangeEmail"
+                android:textColor="#303841"
+                android:textSize="20sp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="15dp"
+                android:background="#BDBDBD" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/Astrology"
+                android:textColor="#303841"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:id="@+id/changeHLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvChangeH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/ChangeH"
+                    android:textColor="#303841"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvSettingsH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_baseline_create_24"
+                    android:drawablePadding="10dp"
+                    android:gravity="right"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/changeZLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvChangeZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/ChangeZ"
+                    android:textColor="#303841"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvSettingsZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_baseline_create_24"
+                    android:drawablePadding="10dp"
+                    android:gravity="right"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#BDBDBD"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Notifications"
+                android:textColor="#303841"
+                android:textSize="30sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/tvN"
+                android:textSize="20sp"
+                android:textColor="#303841"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ENotifications" />
+
+
+            <LinearLayout
+                android:id="@+id/nLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvNInfo"
+                    android:textSize="16sp"
+                    android:textColor="#303841"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/NotificationsD" />
+
+                <Switch
+                    android:id="@+id/nSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDOM"
+                android:textSize="20sp"
+                android:textColor="#303841"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvDOM"
+                android:layout_marginBottom="5dp"/>
+
+
+            <TextView
+                android:id="@+id/etDOM"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Day of Month"
+                android:layout_marginBottom="15dp"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#BDBDBD"
+                android:layout_marginBottom="15dp"/>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/LG"
+                android:textSize="24sp"
+                android:backgroundTint="#303841" />
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

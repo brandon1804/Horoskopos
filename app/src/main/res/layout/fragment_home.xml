@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragment"
+    android:background="#F3F3F3"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/tvGreetingHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#303841"
+        android:textSize="30sp"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btnYH"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left|center_vertical"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:text="@string/yrHP"
+        app:backgroundTint="#303841" />
+
+    <Button
+        android:id="@+id/btnYCZ"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left|center_vertical"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:text="@string/yrZF"
+        app:backgroundTint="#303841" />
+
+
+    <TextView
+        android:id="@+id/tvDiscover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#303841"
+        android:textSize="30sp"
+        android:text="@string/Discover"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btnCC"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_button"
+        android:drawableLeft="@drawable/ic_baseline_people_24"
+        android:gravity="left|center_vertical"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:text="@string/CC"
+        app:backgroundTint="#303841" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F3F3"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCZ"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_marginRight="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/zodiac"
+            android:padding="10dp"
+            android:text="@string/CZ"
+            android:textSize="16sp"
+            app:backgroundTint="#303841" />
+
+        <Button
+            android:id="@+id/btnH"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_weight="1"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/sun"
+            android:padding="10dp"
+            android:text="@string/H"
+            android:textSize="16sp"
+            app:backgroundTint="#303841" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
