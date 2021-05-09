@@ -17,6 +17,7 @@
     <string name="tvCH">Select your horoscope</string>
     <string name="tvCAH">Select a horoscope</string>
     <string name="tvCZ">Select your zodiac</string>
+    <string name="tvCAZ">Select a zodiac</string>
     <string name="tvCHInfo">You may change your horoscope later on if you wish.</string>
     <string name="tvCZInfo">You may change your horoscope and zodiac later on if you wish.</string>
     <string name="tvOverviewY">2021 Overview</string>
@@ -24,7 +25,8 @@
     <string name="closeDrawer">close</string>
     <string name="yrHP">Your horoscope prediction</string>
     <string name="yrZF">Your zodiac forecast</string>
-    <string name="CC">Compatibility Calculator</string>
+    <string name="HC">Horoscope Compatibility</string>
+    <string name="ZC">Zodiac Compatibility</string>
     <string name="Overall">Overall: </string>
     <string name="Wealth">Wealth: </string>
     <string name="Career">Career: </string>
@@ -46,4 +48,6 @@
     <string name="tvDOM">Day of Month</string>
     <string name="tvTOD">Time of Day</string>
     <string name="LG">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

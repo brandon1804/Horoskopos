@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class CompatibilityFragment extends Fragment {
@@ -38,7 +37,7 @@ public class CompatibilityFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View compatibilityView =  inflater.inflate(R.layout.fragment_compatibility, container, false);
-        getActivity().setTitle("Compatibility Calculator");
+        getActivity().setTitle("Horoscope Compatibility");
 
 
         btnFH = compatibilityView.findViewById(R.id.btnFH);
@@ -90,7 +89,7 @@ public class CompatibilityFragment extends Fragment {
                     }
                 });//end of positive
 
-                builder.setNeutralButton("Cancel", null);
+                builder.setNegativeButton("Cancel", null);
                 AlertDialog myDialog = builder.create();
                 myDialog.show();
 
@@ -131,7 +130,7 @@ public class CompatibilityFragment extends Fragment {
                     }
                 });//end of positive
 
-                builder.setNeutralButton("Cancel", null);
+                builder.setNegativeButton("Cancel", null);
                 AlertDialog myDialog = builder.create();
                 myDialog.show();
 
@@ -143,7 +142,7 @@ public class CompatibilityFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (firstH == null){
+                if (firstH == null || secondH == null){
                    Toast.makeText(getContext(), "Please select a horoscope", Toast.LENGTH_LONG).show();
                 }//end of if
 

@@ -45,7 +45,7 @@ public class CompatibilityResultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View compatibilityResultView = inflater.inflate(R.layout.fragment_compatibility_result, container, false);
-        getActivity().setTitle("Compatibility Result");
+        getActivity().setTitle("Horoscope Compatibility Result");
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -181,7 +181,7 @@ public class CompatibilityResultFragment extends Fragment {
         else if (horoscopes.equals("ScorpioCancer")){
             horoscopes = "CancerScorpio";
         }
-        else if (horoscopes.equals("CancerVirgo")){
+        else if (horoscopes.equals("VirgoCancer")){
             horoscopes = "CancerVirgo";
         }
         else if (horoscopes.equals("AquariusCapricorn")){

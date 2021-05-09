@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
@@ -37,7 +38,7 @@ public class HomeFragment extends Fragment {
     FirebaseUser currUser;
 
     TextView tvGreetingH;
-    Button btnYH, btnYCZ, btnCC, btnCZ, btnH;
+    Button btnYH, btnYCZ, btnCC, btnZC, btnCZ, btnH;
     String greetingTime, uHoroscope, uZodiac;
     int horoscopeIndex, zodiacIndex, horoscopeDrawable, zodiacDrawable;
 
@@ -61,15 +62,13 @@ public class HomeFragment extends Fragment {
         currUser = fAuth.getCurrentUser();
         root = FirebaseDatabase.getInstance().getReference();
 
-
         tvGreetingH = homeView.findViewById(R.id.tvGreetingHome);
         btnYH = homeView.findViewById(R.id.btnYH);
         btnYCZ = homeView.findViewById(R.id.btnYCZ);
         btnCC = homeView.findViewById(R.id.btnCC);
+        btnZC = homeView.findViewById(R.id.btnZC);
         btnCZ = homeView.findViewById(R.id.btnCZ);
         btnH  = homeView.findViewById(R.id.btnH);
-
-
 
         fm = getFragmentManager();
         fragmentTransaction = fm.beginTransaction();
@@ -96,6 +95,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 fragmentTransaction.replace(R.id.containerFragment, new CompatibilityFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnZC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction.replace(R.id.containerFragment, new ZodiacCompatibilityFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -151,13 +158,13 @@ public class HomeFragment extends Fragment {
                     if(uHoroscope.equals(horoscopes[i])){
                         horoscopeIndex = i;
                     }
-                }//end of for loop
+                }//end of horoscopes for loop
 
                 for(int i = 0; i < zodiacs.length; i++){
                     if(uZodiac.equals(zodiacs[i])){
                         zodiacIndex = i;
                     }
-                }//end of for loop
+                }//end of zodiacs for loop
 
                 horoscopeDrawable = horoscopeIcons[horoscopeIndex];
                 zodiacDrawable = zodiacIcons[zodiacIndex];
@@ -178,5 +185,6 @@ public class HomeFragment extends Fragment {
 
 
     }//end of updateUI
+
 
 }//end of class

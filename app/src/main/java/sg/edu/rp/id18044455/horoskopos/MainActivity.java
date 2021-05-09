@@ -100,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.replace(R.id.containerFragment, new ChineseZodiacFragment());
             fragmentTransaction.commit();
         }
+        else if (item.getItemId() == R.id.zodiacCompatibility){
+            fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.containerFragment, new ZodiacCompatibilityFragment());
+            fragmentTransaction.commit();
+        }
         else if (item.getItemId() == R.id.horoscopeList){
             fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.containerFragment, new HoroscopeFragment());

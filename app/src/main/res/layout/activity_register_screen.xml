@@ -136,7 +136,6 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="textPassword"
-                        android:text="147258"
                         android:textSize="24sp" />
                 </LinearLayout>
 

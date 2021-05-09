@@ -14,14 +14,17 @@
     <item android:title="Astrology">
         <menu>
             <item
-                android:id="@+id/chineseZodiac"
-                android:title="Chinese Zodiac" />
-            <item
                 android:id="@+id/horoscopeList"
                 android:title="Horoscopes" />
             <item
                 android:id="@+id/horoscopeCompatibility"
                 android:title="Horoscope Compatibility" />
+            <item
+                android:id="@+id/chineseZodiac"
+                android:title="Chinese Zodiac" />
+            <item
+                android:id="@+id/zodiacCompatibility"
+                android:title="Zodiac Compatibility" />
         </menu>
     </item>
 
