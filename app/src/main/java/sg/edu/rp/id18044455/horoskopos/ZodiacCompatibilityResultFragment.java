@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,12 +25,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ZodiacCompatibilityResultFragment extends Fragment {
 
-
+    
     FirebaseAuth fAuth;
     DatabaseReference root;
 
     ImageView fzView, szView;
     TextView tvFZ, tvFZD, tvZodiacCResult, tvSZ, tvSZD, tvOverviewCZ;
+    Button btnCAZ;
 
     ProgressBar zodiacCBar;
 
@@ -68,6 +70,20 @@ public class ZodiacCompatibilityResultFragment extends Fragment {
         tvOverviewCZ = zodiacCompatibilityResultView.findViewById(R.id.tvOverviewCZ);
 
         updateUI();
+
+        btnCAZ = zodiacCompatibilityResultView.findViewById(R.id.btnCAZ);
+
+        updateUI();
+
+        btnCAZ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction.replace(R.id.containerFragment, new ZodiacCompatibilityFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+
 
         return zodiacCompatibilityResultView;
     }//end of onCreateView

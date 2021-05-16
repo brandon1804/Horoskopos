@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class CompatibilityResultFragment extends Fragment {
 
     ImageView fhView, shView;
     TextView tvFH, tvFHD, tvCResult, tvSH, tvSHD, tvResult;
+    Button btnCAH;
 
     ProgressBar cBar;
 
@@ -67,7 +69,17 @@ public class CompatibilityResultFragment extends Fragment {
         tvSHD = compatibilityResultView.findViewById(R.id.tvSHD);
         tvResult = compatibilityResultView.findViewById(R.id.tvResult);
 
+        btnCAH = compatibilityResultView.findViewById(R.id.btnCAH);
+
         updateUI();
+
+        btnCAH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction.replace(R.id.containerFragment, new CompatibilityFragment());
+                fragmentTransaction.commit();
+            }
+        });
 
         return compatibilityResultView;
     }//end of onCreateView

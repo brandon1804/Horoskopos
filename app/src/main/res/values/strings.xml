@@ -36,6 +36,7 @@
     <string name="CZ">Chinese Zodiac</string>
     <string name="H">Horoscopes</string>
     <string name="Calculate">Calculate</string>
+    <string name="CA">Calculate Again</string>
     <string name="General">General</string>
     <string name="Astrology">Astrology</string>
     <string name="ChangeH">Change horoscope</string>
@@ -48,6 +49,4 @@
     <string name="tvDOM">Day of Month</string>
     <string name="tvTOD">Time of Day</string>
     <string name="LG">Log Out</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

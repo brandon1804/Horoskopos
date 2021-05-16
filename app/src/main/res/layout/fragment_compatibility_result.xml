@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".CompatibilityResultFragment">
@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/hsLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:orientation="horizontal">
 
@@ -120,7 +120,7 @@
     <LinearLayout
         android:id="@+id/resultLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
@@ -133,11 +133,31 @@
 
         <TextView
             android:id="@+id/tvResult"
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:textColor="#303841"
             android:textSize="18sp" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center"
+        android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnCAH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CA"
+        android:textSize="18sp"
+        android:backgroundTint="#303841"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
+
+
 
 </LinearLayout>
