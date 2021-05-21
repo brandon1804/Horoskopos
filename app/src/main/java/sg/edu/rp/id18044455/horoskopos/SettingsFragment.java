@@ -383,8 +383,8 @@ public class SettingsFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                         fAuth.signOut();
                         Intent intent = new Intent(getContext(), LoginScreen.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
+                        getActivity().finish();
                     }
                 });//end of positive
 

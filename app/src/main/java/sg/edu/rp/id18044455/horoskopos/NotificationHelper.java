@@ -32,7 +32,7 @@ class NotificationHelper {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent resultPendingIntent = PendingIntent.getActivity(mContext,
-                0 /* Request code */, intent,
+                0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
 
