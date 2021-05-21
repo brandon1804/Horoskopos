@@ -135,7 +135,7 @@ public class CompatibilityFragment extends Fragment {
                 myDialog.show();
 
             }
-        });//end of btnFH
+        });//end of btnSH
 
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {

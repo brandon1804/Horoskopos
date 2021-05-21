@@ -60,12 +60,8 @@ public class LoginScreen extends AppCompatActivity {
 
 
 
+        loginValidation();
 
-        if (currUser != null) {
-            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +91,7 @@ public class LoginScreen extends AppCompatActivity {
 
                             root = FirebaseDatabase.getInstance().getReference().child("Users").child(fAuth.getCurrentUser().getUid());
 
-                            root.addValueEventListener(new ValueEventListener() {
+                            root.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.hasChild("Horoscope") && snapshot.hasChild("Zodiac")){
@@ -196,5 +192,42 @@ public class LoginScreen extends AppCompatActivity {
 
 
     }//end of onCreate
+
+    private void loginValidation(){
+        if(currUser != null){
+
+            root = FirebaseDatabase.getInstance().getReference().child("Users").child(fAuth.getCurrentUser().getUid());
+
+            root.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.hasChild("Horoscope") && snapshot.hasChild("Zodiac")){
+                        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    else if (!snapshot.hasChild("Horoscope")){
+                        Intent intent = new Intent(LoginScreen.this, HoroscopeSelectionScreen.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else if (!snapshot.hasChild("Zodiac")){
+                        Intent intent = new Intent(LoginScreen.this, ZodiacSelectionScreen.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+    }//end of loginValidation
+
+
 
 }//end of class

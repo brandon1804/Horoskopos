@@ -1,6 +1,9 @@
 package sg.edu.rp.id18044455.horoskopos;
 
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +36,7 @@ public class CompatibilityResultFragment extends Fragment {
     ImageView fhView, shView;
     TextView tvFH, tvFHD, tvCResult, tvSH, tvSHD, tvResult;
     Button btnCAH;
+    ImageView shareBtnCR;
 
     ProgressBar cBar;
 
@@ -70,8 +75,19 @@ public class CompatibilityResultFragment extends Fragment {
         tvResult = compatibilityResultView.findViewById(R.id.tvResult);
 
         btnCAH = compatibilityResultView.findViewById(R.id.btnCAH);
+        shareBtnCR = compatibilityResultView.findViewById(R.id.shareBtnCR);
 
         updateUI();
+
+        shareBtnCR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Horoscope Compatibility Result", tvResult.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(getContext(), firstH + " & " + secondH + " Compatibility Result Copied!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnCAH.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,8 +142,6 @@ public class CompatibilityResultFragment extends Fragment {
 
                 }
             });
-
-
 
         }//end of bundle validation
 

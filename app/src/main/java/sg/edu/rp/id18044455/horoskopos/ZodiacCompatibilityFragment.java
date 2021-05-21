@@ -98,7 +98,7 @@ public class ZodiacCompatibilityFragment extends Fragment {
                 myDialog.show();
 
             }
-        });//end of btnFH
+        });//end of btnFZ
 
 
         btnSZ.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +139,7 @@ public class ZodiacCompatibilityFragment extends Fragment {
                 myDialog.show();
 
             }
-        });//end of btnFH
+        });//end of btnSZ
 
 
         btnCalculateZC.setOnClickListener(new View.OnClickListener() {

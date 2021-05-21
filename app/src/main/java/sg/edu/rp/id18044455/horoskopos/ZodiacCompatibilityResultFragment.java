@@ -1,5 +1,8 @@
 package sg.edu.rp.id18044455.horoskopos;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,13 +29,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ZodiacCompatibilityResultFragment extends Fragment {
 
-    
+
     FirebaseAuth fAuth;
     DatabaseReference root;
 
     ImageView fzView, szView;
     TextView tvFZ, tvFZD, tvZodiacCResult, tvSZ, tvSZD, tvOverviewCZ;
     Button btnCAZ;
+    ImageView shareBtnZCR;
 
     ProgressBar zodiacCBar;
 
@@ -72,8 +77,19 @@ public class ZodiacCompatibilityResultFragment extends Fragment {
         updateUI();
 
         btnCAZ = zodiacCompatibilityResultView.findViewById(R.id.btnCAZ);
+        shareBtnZCR = zodiacCompatibilityResultView.findViewById(R.id.shareBtnZCR);
 
         updateUI();
+
+        shareBtnZCR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Zodiac Compatibility Result", tvOverviewCZ.getText().toString());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(getContext(), firstZ + " & " + secondZ + " Compatibility Result Copied!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnCAZ.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,8 +145,6 @@ public class ZodiacCompatibilityResultFragment extends Fragment {
 
                 }
             });
-
-
 
         }//end of bundle validation
 

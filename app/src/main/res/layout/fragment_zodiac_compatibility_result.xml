@@ -124,12 +124,26 @@
         android:layout_marginTop="50dp"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Overview"
-            android:textColor="#303841"
-            android:textSize="30sp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Overview"
+                android:textColor="#303841"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/shareBtnZCR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_share_24" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvOverviewCZ"
