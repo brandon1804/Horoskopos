@@ -156,8 +156,8 @@ public class ZodiacCompatibilityResultFragment extends Fragment {
         if (zodiacs.equals("PigDog")){
             zodiacs = "DogPig";
         }
-        else if (zodiacs.equals("DragonDog")){
-            zodiacs = "DogDragon";
+        else if (zodiacs.equals("DogDragon")){
+            zodiacs = "DragonDog";
         }
         else if (zodiacs.equals("HorseDragon")){
             zodiacs = "DragonHorse";
@@ -337,7 +337,7 @@ public class ZodiacCompatibilityResultFragment extends Fragment {
             zodiacs = "TigerDog";
         }
         else if (zodiacs.equals("HorseTiger")){
-            zodiacs = "HorseTiger";
+            zodiacs = "TigerHorse";
         }
         else if (zodiacs.equals("MonkeyTiger")){
             zodiacs = "TigerMonkey";
