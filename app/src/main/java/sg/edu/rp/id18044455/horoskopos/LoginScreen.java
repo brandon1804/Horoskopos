@@ -39,7 +39,7 @@ public class LoginScreen extends AppCompatActivity {
 
     FirebaseAuth fAuth;
     FirebaseUser currUser;
-    DatabaseReference root;
+
 
 
 
@@ -57,10 +57,6 @@ public class LoginScreen extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         currUser = fAuth.getCurrentUser();
-
-
-
-        loginValidation();
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -88,36 +84,9 @@ public class LoginScreen extends AppCompatActivity {
                         public void onSuccess(AuthResult authResult) {
 
                             Toast.makeText(LoginScreen.this, "Login Success", Toast.LENGTH_LONG).show();
-
-                            root = FirebaseDatabase.getInstance().getReference().child("Users").child(fAuth.getCurrentUser().getUid());
-
-                            root.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if (snapshot.hasChild("Horoscope") && snapshot.hasChild("Zodiac")){
-                                        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-
-                                    else if (!snapshot.hasChild("Horoscope")){
-                                        Intent intent = new Intent(LoginScreen.this, HoroscopeSelectionScreen.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                    else if (!snapshot.hasChild("Zodiac")){
-                                        Intent intent = new Intent(LoginScreen.this, ZodiacSelectionScreen.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-
-
-                                }
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
+                            Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
 
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -189,44 +158,7 @@ public class LoginScreen extends AppCompatActivity {
         });//end of register
 
 
-
-
     }//end of onCreate
-
-    private void loginValidation(){
-        if(currUser != null){
-
-            root = FirebaseDatabase.getInstance().getReference().child("Users").child(fAuth.getCurrentUser().getUid());
-
-            root.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.hasChild("Horoscope") && snapshot.hasChild("Zodiac")){
-                        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                    else if (!snapshot.hasChild("Horoscope")){
-                        Intent intent = new Intent(LoginScreen.this, HoroscopeSelectionScreen.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else if (!snapshot.hasChild("Zodiac")){
-                        Intent intent = new Intent(LoginScreen.this, ZodiacSelectionScreen.class);
-                        startActivity(intent);
-                        finish();
-                    }
-
-
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-        }
-    }//end of loginValidation
 
 
 
